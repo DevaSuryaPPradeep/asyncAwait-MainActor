@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View.
 struct WeatherView: View {
     
     /// Declarationfor state property and @stateobject property wrappers.
