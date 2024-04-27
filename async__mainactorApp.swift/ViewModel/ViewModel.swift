@@ -7,10 +7,15 @@
 
 import Foundation
 
-class Viewmodel: ObservableObject {
+/// Viewmodel.
+class ViewModel: ObservableObject {
     
+    /// Published Property declarations.
     @Published var dataSource: ModelStructure = ModelStructure(location: "", temperature:0.0)
     
+    /// Function which is used in the view to call the asynchrounus call to the API.
+    /// - Parameter cityName: Is of type String that is used to analyse the location details typed in by the user.
+    /// - Returns: Returns a result of ModelStructure.
     func extractData(_ cityName: String)async throws -> ModelStructure {
         do {
             dataSource =  try await fetchWeatherData(cityName)
@@ -21,6 +26,9 @@ class Viewmodel: ObservableObject {
         }
     }
     
+    /// Function that is responsible for the API  call.
+    /// - Parameter cityId: Is of type String that is used to analyse the location details typed in by the user.
+    /// - Returns:  Returns a result of ModelStructure.
     func fetchWeatherData(_ cityId: String) async throws -> ModelStructure {
         guard let urlValue = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(cityId)&appid=8984d739fa91d7031fff0e84a3d2c520&units=imperial") else {
             throw DataError.invalidURL

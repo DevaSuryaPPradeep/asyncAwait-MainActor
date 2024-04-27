@@ -7,6 +7,7 @@
 
 import Foundation
 
+///Model for weather View.
 struct ModelData: Codable {
     let main: Main
     let name: String

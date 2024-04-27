@@ -9,11 +9,12 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    /// <#Description#>
+    /// Declarationfor state property and @stateobject property wrappers.
     @State var temperatureDetails: Double = 0.0
     @State var locationDetails: String = ""
     @StateObject var viewmodelInstance : ViewModel =  ViewModel()
     @State var textFieldValue: String = ""
+    
     var body: some View {
         VStack {
             TextField("Enter the location here..", text: $textFieldValue)
