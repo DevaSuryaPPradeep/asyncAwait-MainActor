@@ -13,9 +13,10 @@ class ViewModel: ObservableObject {
     /// Published Property declarations.
     @Published var dataSource: ModelStructure = ModelStructure(location: "", temperature:0.0)
     
-    /// Function which is used in the view to call the asynchrounus call to the API.
+    /// Function which is used in the view to call the asynchrounus call to the API, this function is called in the mainthread also
     /// - Parameter cityName: Is of type String that is used to analyse the location details typed in by the user.
     /// - Returns: Returns a result of ModelStructure.
+    @MainActor
     func extractData(_ cityName: String)async throws -> ModelStructure {
         do {
             dataSource =  try await fetchWeatherData(cityName)
