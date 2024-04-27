@@ -42,3 +42,9 @@ struct WeatherView: View {
 #Preview {
     WeatherView()
 }
+
+
+//Usage of Tasks.
+/*
+ A task is a unit of asynchronus work that can be added to the view to allow asynchrouns tasks to be performed.
+ */

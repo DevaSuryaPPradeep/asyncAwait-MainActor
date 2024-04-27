@@ -59,3 +59,10 @@ enum DataError: Error {
     case invalidResponse
     case unknownError(errorValue: Error)
 }
+
+//Async-Await.
+/*
+ At first developers used completion closures and delegate patterns to implement asynchronus tasks.
+ so then apple in WWD21 introduced async await functionality.
+ By adding async to the method signature we are telling the compiler to stay on hold until the asynchronus functioned mentioned to return a value.
+ */
