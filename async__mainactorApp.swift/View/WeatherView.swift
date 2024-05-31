@@ -10,7 +10,7 @@ import SwiftUI
 /// View.
 struct WeatherView: View {
     
-    /// Declarationfor state property and @stateobject property wrappers.
+    /// Declaration for state property and @stateobject property wrappers.
     @State var temperatureDetails: Double = 0.0
     @State var locationDetails: String = ""
     @StateObject var viewmodelInstance : ViewModel =  ViewModel()
